@@ -1,0 +1,251 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Анянова Марина Игоревна",
+      "data": "2000-07-09",
+      "email": "atul@gmail.com",
+      "phone": "+196859586984512",
+      "avatar": "https://i.postimg.cc/d3ykpLs8/stud1.jpg",
+      "file": true
+    },
+    {
+      "id": 2,
+      "name": "Моськи Сергей Анатлольевич",
+      "data": "2000-07-04",
+      "email": "atul@gmail.com",
+      "phone": "9685958698",
+      "avatar": "https://i.postimg.cc/d3ykpLs8/stud1.jpg",
+      "file": true
+    },
+    {
+      "id": 3,
+      "name": "Байгужина Лилия Робертовна",
+      "data": "2022-05-11",
+      "email": "ivan@google.net",
+      "phone": "+7123123123",
+      "avatar": "",
+      "file": false
+    },
+    {
+      "id": 4,
+      "name": "Богапова Анастасия Валерьевна",
+      "data": "2022-05-11",
+      "email": "info@sevkavportal.ru",
+      "phone": "+7222222222",
+      "avatar": "https://oir.mobi/uploads/posts/2020-01/1579279411_11-15.jpg",
+      "file": true
+    },
+    {
+      "name": "Волков Максим Юрьевич",
+      "data": "2000-01-01",
+      "email": "info@ru",
+      "phone": "Нет телефона",
+      "file": true,
+      "avatar": "https://oir.mobi/uploads/posts/2020-01/1579279411_11-15.jpg",
+      "id": 5
+    },
+    {
+      "name": "Деткина Валерия Олеговна",
+      "data": "2000-01-01",
+      "email": "info@sevkavportal.ru",
+      "phone": "Нет телефона",
+      "file": true,
+      "avatar": "https://oir.mobi/uploads/posts/2020-01/1579279411_11-15.jpg",
+      "id": 6
+    },
+    {
+      "name": "Ерышева Анастасия Андреевна",
+      "data": "2000-01-06",
+      "email": "info@sevkavportal.ru",
+      "phone": "33333",
+      "file": true,
+      "avatar": "https://oir.mobi/uploads/posts/2020-01/1579279411_11-15.jpg",
+      "id": 7
+    },
+    {
+      "name": "Ефимов Дмитрий Борисович",
+      "data": "2000-01-28",
+      "email": "info@sevkavportal.ru",
+      "phone": "Нет телефона",
+      "file": true,
+      "avatar": "https://oir.mobi/uploads/posts/2020-01/1579279411_11-15.jpg",
+      "id": 8
+    },
+    {
+      "name": "Жигульская Мария Сергеевна",
+      "data": "2000-01-19",
+      "email": "info@sevkavportal.ru",
+      "phone": "Нет телефона",
+      "file": true,
+      "avatar": "https://oir.mobi/uploads/posts/2020-01/1579279411_11-15.jpg",
+      "id": 9
+    },
+    {
+      "name": "Каканов Евгений Дмитриевич",
+      "data": "2000-01-07",
+      "email": "info@sevkavportal.ru",
+      "phone": "111",
+      "file": true,
+      "avatar": "https://oir.mobi/uploads/posts/2020-01/1579279411_11-15.jpg",
+      "id": 10
+    },
+    {
+      "name": "Карпич Юлия Владимировна",
+      "data": "2000-01-01",
+      "email": "info@sevkavportal.ru",
+      "phone": "Нет телефона",
+      "file": true,
+      "avatar": "https://funart.pro/uploads/posts/2021-07/1627276369_7-funart-pro-p-krasivie-milie-sobachki-zhivotnie-krasivo-9.jpg",
+      "id": 11
+    },
+    {
+      "name": "Катерина Инна Александровна",
+      "data": "2000-01-07",
+      "email": "info@sevkavportal.ru",
+      "phone": "Нет телефона",
+      "file": true,
+      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/164147/pub_5ce7ed349676d700b3066fb7_5ce7ee75cb1ea900b242b36a/scale_1200",
+      "id": 12
+    },
+    {
+      "name": "Клемешов Артем Сергеевич ",
+      "data": "2000-01-28",
+      "email": "info@sevkavportal.ru",
+      "phone": "2",
+      "file": true,
+      "avatar": "https://oir.mobi/uploads/posts/2020-01/1579279411_11-15.jpg",
+      "id": 13
+    },
+    {
+      "name": "Шевцова Анастасия Валерьевна",
+      "data": "2000-01-28",
+      "email": "info@sevkavportal.ru",
+      "phone": "Нет телефона",
+      "file": true,
+      "avatar": "Шевцова Анастасия Валерьевна",
+      "id": 14
+    },
+    {
+      "name": "Хамицев Артур Сергеевич ",
+      "data": "2000-01-21",
+      "email": "info@sevkavportal.ru",
+      "phone": "Нет телефона",
+      "file": true,
+      "avatar": "https://oir.mobi/uploads/posts/2020-01/1579279411_11-15.jpg",
+      "id": 15
+    },
+    {
+      "name": "Толкачев Дмитрий Сергеевич ",
+      "data": "2000-01-30",
+      "email": "info@sevkavportal.ru",
+      "phone": "Нет телефона",
+      "file": true,
+      "avatar": "https://oir.mobi/uploads/posts/2020-01/1579279411_11-15.jpg",
+      "id": 16
+    }
+  ],
+  "sections": [
+    {
+      "id": 1,
+      "title": "Группа поддержки",
+      "description": "Выпускники данного направления приобретают важные качества"
+    },
+    {
+      "id": 2,
+      "title": "Графический дизайн",
+      "description": "Основные учебные курсы: История зарубежной архитектуры и искус..."
+    },
+    {
+      "title": "Промышленный дизайн",
+      "description": "Выпускники данного направления приобретают важные качества: развитые художественно-конструкторски...",
+      "id": 3
+    },
+    {
+      "title": "ИТ технологиии",
+      "description": "Программа включает актуальные дисциплины, отражающие современные тенденции рынка",
+      "id": 4
+    },
+    {
+      "title": "Гражданско-правовой",
+      "description": "Гражданско-правовой профиль юриспруденции готовит юристов для работы в сфере ЖКХ, трудовой сферах...",
+      "id": 5
+    },
+    {
+      "title": "Уголовно-правовой",
+      "description": "Основная цель уголовно-правового профиля - создание условий для получения студентами специфически...",
+      "id": 6
+    },
+    {
+      "title": "Государственно-правовая",
+      "description": "Государственно-правовая специализация обеспечивает получение у...",
+      "id": 7
+    },
+    {
+      "title": "Экологическое и природоресурсное право",
+      "description": "На рынке юридических услуг имеется значительный сегмент, связанный с оказанием правовой помощи ",
+      "id": 8
+    },
+    {
+      "title": "Государственно-правовой",
+      "description": "Государственно–правовой профиль представлен в виде получения углубленных, профессиональных знаний..",
+      "id": 9
+    }
+  ],
+  "section_student": [
+    {
+      "id": 4,
+      "data": "2022-05-11",
+      "id_section": 2,
+      "id_student": 1
+    },
+    {
+      "id": 5,
+      "data": "2022-05-11",
+      "id_section": 3,
+      "id_student": 1
+    },
+    {
+      "id": 6,
+      "data": "2022-05-11",
+      "id_section": 4,
+      "id_student": 1
+    },
+    {
+      "data": "2022-05-12",
+      "id_section": 5,
+      "id_student": "1",
+      "id": 7
+    },
+    {
+      "data": "2022-05-11",
+      "id_section": 6,
+      "id_student": "1",
+      "id": 8
+    },
+    {
+      "data": "2022-05-12",
+      "id_section": 9,
+      "id_student": "1",
+      "id": 10
+    },
+    {
+      "data": "2022-05-05",
+      "id_section": 1,
+      "id_student": "3",
+      "id": 11
+    },
+    {
+      "data": "2022-05-07",
+      "id_section": 3,
+      "id_student": "3",
+      "id": 12
+    },
+    {
+      "data": "2022-05-05",
+      "id_student": 1,
+      "id_section": "1",
+      "id": 13
+    }
+  ]
+}
