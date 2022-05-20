@@ -80,11 +80,6 @@ export default {
       sortedAndSearchedStudents: 'student/sortedAndSearchedStudents'
     })
   },
-  // watch: {
-  //   page() {
-  //      this.fetchStudents()
-  //   }
-  // }
 }
 </script>
 

@@ -45,6 +45,7 @@ export const StudentModule = {
     actions: {
         async fetchStudents({ state, commit }) {
             try {
+                state.page = 0
                 commit('setLoading', true);
                 const response = await axios.get('http://localhost:3000/students', {
                     params: {

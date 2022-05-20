@@ -8,7 +8,7 @@ export const SectionModule = {
         searchQuery: '',
         page: 1,
         limit: 10,
-        totalSections: 0,
+        totalPages: 0,
         sortOptions: [
             {value: 'title', name: 'По названию'},
             {value: 'description', name: 'По содержимому'},
@@ -45,6 +45,7 @@ export const SectionModule = {
     actions: {
         async fetchSections({state, commit}) {
             try {
+                state.page = 0
                 commit('setLoading', true);
                 const response = await axios.get('http://localhost:3000/sections', {
                     params: {
@@ -52,6 +53,7 @@ export const SectionModule = {
                         _limit: state.limit
                     }
                 });
+                console.log("fetchSections", state.page, state.limit)
                 commit('setTotalPages', Math.ceil(response.headers['x-total-count'] / state.limit))
                 commit('setSections', response.data)
             } catch (e) {

@@ -29,9 +29,7 @@ export default {
     },
   methods: {
     createSection() {
-//     this.student.push(student);
       this.$emit("section", sectiont);
-//      this.dialogVisible = false;
 	    console.log("STS:", section)
       },
     
