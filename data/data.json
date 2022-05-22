@@ -246,6 +246,18 @@
       "id_student": 1,
       "id_section": "1",
       "id": 13
+    },
+    {
+      "data": "2022-05-06",
+      "id_section": 1,
+      "id_student": "2",
+      "id": 14
+    },
+    {
+      "data": "2022-05-06",
+      "id_section": 4,
+      "id_student": "2",
+      "id": 15
     }
   ]
 }

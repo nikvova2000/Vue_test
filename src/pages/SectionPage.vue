@@ -53,10 +53,30 @@ export default {
   methods: {
     createSection(section) {
       this.sections.push(section);
+      console.log("Create section", section);
+      if (section.title == ''){
+         alert("Поле Название не заполнено");
+      }
+      if (section.description == ''){
+         alert("Описание не заполнено");
+      }
+      axios.post(`http://localhost:3000/sections`, {
+        title:  section.title,
+        description: section.description
+      });
+      this.$router.go(section);
       this.dialogVisible = false;
     },
     removeSection(section) {
       this.sections = this.sections.filter(p => p.id !== section.id)
+      console.log("Remove section", section);
+      axios.delete(`http://localhost:3000/sections/${section.id}`)
+        .then((response) => {
+          console.log(response)
+        }, (error) => {
+          console.log(error)
+        })
+        // this.$router.go(section);
     },
     showDialog() {
       this.dialogVisible = true;
@@ -113,7 +133,7 @@ export default {
 .app__btns {
   margin: 15px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
 }
 .page__wrapper {
   display: flex;

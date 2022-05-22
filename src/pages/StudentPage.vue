@@ -22,13 +22,15 @@ import MyButton from "@/comp/UI/MyButton";
 import axios from 'axios';
 import MySelect from "@/comp/UI/MySelect";
 import MyInput from "@/comp/UI/MyInput";
-
+import MyInputEmail from "@/comp/UI/MyInputEmail";
 export default {
   components: {
     MyInput,
     MySelect,
     MyButton,
-    StudentList, StudentForm
+    MyInputEmail,
+    StudentList, 
+    StudentForm
   },
   data() {
     return {
@@ -48,32 +50,42 @@ export default {
   },
   methods: {
     createStudent(student) {
-      this.students.push(student);
+      // this.students.push(student);
       console.log("Create student", student);
-      if (student.name == ''){
-         alert("Поле ФИО не заполнено");
-      }
-      if (student.email == ''){
-         alert("Поле E-mail не заполнено");
-      }
-      if (student.phone == ''){
-         student.phone = 'Нет телефона'
-      }
       if (student.avatar == ''){
          student.avatar = 'https://oir.mobi/uploads/posts/2020-01/1579279411_11-15.jpg'
-      }
+      } 
       if (student.file == ''){
          student.file = false
+      } 
+      if (student.name == ''){
+         alert("Поле ФИО не заполнено");
+         errorform = 1;
+      } else if (student.email == ''){
+          alert("Поле E-mail не заполнено");
+          errorform = 1;
+      } else if (!this.validEmail(student.email)) {
+          alert("Укажите корректный адрес электронной почты.");
+          erroform = 1;
+      } else if (student.phone == ''){
+         student.phone = 'Нет телефона'
+         errorform = 1;
+      }  else {
+        axios.post(`http://localhost:3000/students`, {
+          name:  student.name,
+          data: student.data,
+          email: student.email,
+          phone: student.phone,
+          file: student.file,
+          avatar: student.avatar
+        });
+        this.$router.go(student);
+        this.dialogVisible = false;
       }
-      axios.post(`http://localhost:3000/students`, {
-        name:  student.name,
-        data: student.data,
-        email: student.email,
-        phone: student.phone,
-        file: student.file,
-        avatar: student.avatar
-      });
-      this.dialogVisible = false;
+    },
+    validEmail: function (email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
     },
     removeStudent(student) {
       let proceed = confirm("Вы точно хотите удалить?");
@@ -143,7 +155,7 @@ export default {
 .app__btns {
   margin: 15px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
 }
 .page__wrapper {
   display: flex;

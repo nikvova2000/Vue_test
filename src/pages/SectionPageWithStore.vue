@@ -12,11 +12,6 @@
     <section-list :sections="sortedAndSearchedSections" @remove="removeSection" v-if="!isSectionsLoading"/>
     <div v-else>Идет загрузка...</div>
     <div v-intersection="loadMoreSections" class="observer"></div>
-    <div class="page__wrapper">
-      <div v-for="pageNumber in totalPages" :key="pageNumber" class="page" :class="{'current-page': page === pageNumber}" @click="changePage(pageNumber)">
-        {{ pageNumber }}
-      </div>
-    </div>
   </div>
 </template>
 
@@ -53,10 +48,30 @@ export default {
     }),
     createSection(section) {
       this.sections.push(section);
+      console.log("Create section", section);
+      if (section.title == ''){
+         alert("Поле Название не заполнено");
+      }
+      if (section.description == ''){
+         alert("Описание не заполнено");
+      }
+      axios.post(`http://localhost:3000/sections`, {
+        title:  section.title,
+        description: section.description
+      });
+      this.$router.go(section);
       this.dialogVisible = false;
     },
     removeSection(section) {
       this.sections = this.sections.filter(p => p.id !== section.id)
+      console.log("Remove section", section);
+      axios.delete(`http://localhost:3000/sections/${section.id}`)
+        .then((response) => {
+          console.log(response)
+        }, (error) => {
+          console.log(error)
+        })
+        // this.$router.go(section);
     },
     showDialog() {
       this.dialogVisible = true;

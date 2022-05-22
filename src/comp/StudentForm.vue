@@ -1,8 +1,14 @@
 <template>
-  <form @submit.prevent>
+  <form @submit.prevent @submit="checkForm">
     <h4>Добавить студента</h4>
+    <p v-if="errors.length">
+      <b>Пожалуйста исправьте указанные ошибки:</b>
+      <ul>
+        <li v-for="error in errors">{{ error }}</li>
+      </ul>
+    </p>
     <my-input v-focus v-model="student.name" type="text" placeholder="ФИО" />
-    <my-input v-model="student.email" type="text" placeholder="E-mail" />
+    <my-input-email v-model="student.email" type="email" placeholder="E-mail" />
     <my-input v-model="student.phone" type="text" placeholder="Телефон" />
     <div class="data">Дата рождения:</div>
     <v-date-picker class="inline-block h-full" v-model="student.data" type="data"  color="blue" :attributes='attrs' :from-date="new Date(2000, 0, 1)" :model-config="modelConfig" :masks="masks" >
@@ -23,8 +29,9 @@
 export default {
   data() {
     return {
+      errors: [],
 	    enabled: false,
-	    includeFiles: true,
+      includeFiles: true,
 	    date: '0000-00-00',
       masks: {
         input: 'YYYY-MM-DD',

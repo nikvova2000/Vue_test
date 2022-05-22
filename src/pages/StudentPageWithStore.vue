@@ -4,7 +4,7 @@
     <my-input :model-value="searchQuery" @update:model-value="setSearchQuery" placeholder="Поиск...." v-focus />
     <div class="app__btns">
       <my-button @click="showDialog">Добавить студента</my-button>
-      <my-select :model-value="selectedSort" @update:model-value="setSelectedSort" :options="sortOptions"/>
+      <my-select :model-value="selectedSort" @update:model-value="setSelectedSort" :options="sortOptions"/> 
     </div>
     <my-dialog v-model:show="dialogVisible">
       <student-form @create="createStudent" />
@@ -47,11 +47,56 @@ export default {
       fetchStudents: 'student/fetchStudents'
     }),
     createStudent(student) {
-      this.students.push(student);
-      this.dialogVisible = false;
+      // this.students.push(student);
+      console.log("Create student", student);
+      if (student.avatar == ''){
+         student.avatar = 'https://oir.mobi/uploads/posts/2020-01/1579279411_11-15.jpg'
+      } 
+      if (student.file == ''){
+         student.file = false
+      } 
+      if (student.name == ''){
+         alert("Поле ФИО не заполнено");
+         errorform = 1;
+      } else if (student.email == ''){
+          alert("Поле E-mail не заполнено");
+          errorform = 1;
+      } else if (!this.validEmail(student.email)) {
+          alert("Укажите корректный адрес электронной почты.");
+          erroform = 1;
+      } else if (student.phone == ''){
+         student.phone = 'Нет телефона'
+         errorform = 1;
+      }  else {
+        axios.post(`http://localhost:3000/students`, {
+          name:  student.name,
+          data: student.data,
+          email: student.email,
+          phone: student.phone,
+          file: student.file,
+          avatar: student.avatar
+        });
+        this.$router.go(student);
+        this.dialogVisible = false;
+      }
+    },
+    validEmail: function (email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
     },
     removeStudent(student) {
-      this.students = this.students.filter(p => p.id !== student.id)
+      let proceed = confirm("Вы точно хотите удалить?");
+	    if (proceed) {
+		    this.students = this.students.filter(p => p.id !== student.id)
+        console.log("Remove student", student);
+        axios.delete(`http://localhost:3000/students/${student.id}`)
+          .then((response) => {
+            console.log(response)
+          }, (error) => {
+            console.log(error)
+          })
+          this.$router.go(student);
+	    }
     },
     changePage(pageNumber) {
       console.log("pageNumber", pageNumber)
@@ -88,7 +133,7 @@ export default {
 .app__btns {
   margin: 15px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
 }
 .page__wrapper {
   display: flex;

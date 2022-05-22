@@ -1,4 +1,7 @@
 <template>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+
+  </nav>
   <div class="navbar__btns">
       <my-button @click="$router.push('/students')">Студенты с подгрузкой</my-button>
       <my-button @click="$router.push('/sections')">Секции с подгрузкой</my-button>

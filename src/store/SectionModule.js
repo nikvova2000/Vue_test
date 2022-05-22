@@ -7,7 +7,7 @@ export const SectionModule = {
         selectedSort: '',
         searchQuery: '',
         page: 1,
-        limit: 10,
+        limit: 5,
         totalPages: 0,
         sortOptions: [
             {value: 'title', name: 'По названию'},

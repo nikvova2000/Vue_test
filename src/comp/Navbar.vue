@@ -1,6 +1,6 @@
 <template>
-  <div class="navbar">
-    <div @click="$router.push('/')">Владимир Никифоров</div>
+  <div class="navbar  navbar-inverse navbar-fixed-top">
+    <button class="name" @click="$router.push('/')">Владимир Никифоров</button>
     <div class="navbar__btns">
       <my-button @click="$router.push('/students')">Студенты с подгрузкой</my-button>
       <my-button @click="$router.push('/sections')">Секции с подгрузкой</my-button>
@@ -23,6 +23,15 @@ export default {
   display: flex;
   align-items: center;
   padding: 0 15px;
+  top: 0px;
+  position: fixed;
+}
+.name {
+  padding: 10px 15px;
+  background: none;
+  color: teal;
+  border: 1px solid teal;
+  border-radius: 10px;
 }
 .navbar__btns {
   margin-left: auto;
